@@ -16,7 +16,7 @@ class Project{
     this.canvas.addEventListener('mouseover', ()=>{
       if(!this.interval){
         this.drawFrame();
-        this.interval = setInterval(() => this.drawFrame(), 1000/5);
+        this.interval = setInterval(() => this.drawFrame(), 1000/15);
       }
     }, false);
     
