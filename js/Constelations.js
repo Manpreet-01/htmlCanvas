@@ -11,6 +11,9 @@ class Constelations extends Project{
     this.stars.push(new Star([420, 680], true));
     this.stars.push(new Star([510, 690], true));
     this.stars.push(new Star([550, 600], true));
+    
+    this.drawFrame();
+    this.showDisabled();
   }
   
   getRandomStars(N){
@@ -42,7 +45,6 @@ class Constelations extends Project{
       
       this.ctx.beginPath();
       this.ctx.strokeStyle = "white";
-      
       this.ctx.moveTo(...prevStar.location);
       this.ctx.lineTo(...currstar.location);
       this.ctx.stroke();

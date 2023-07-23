@@ -4,6 +4,8 @@ class StarryNight extends Project{
     super(canvas);
 
     this.stars = this.getRandomStars(100);
+    this.drawFrame();
+    this.showDisabled();
   }
   
   getRandomStars(N){
