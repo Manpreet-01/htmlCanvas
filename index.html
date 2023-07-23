@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title>coding 1</title>
+	<script src="js/Project.js"></script>
+	<script src="js/StarryNight.js"></script>
+	<script src="js/Constelations.js"></script>
+	
+	<style>
+		body{
+			background: grey;
+			margin: 0;
+			text-align: center;
+		}
+		
+		canvas{
+			background: white;
+			margin: 5vh;
+			width: 80vh;
+			height: 80vh;
+		}
+	</style>
+	
+	<script>
+		'use strict';
+		const CANVAS_SIZE = 1000;
+		const projectCount = 5;
+
+		const projects = [
+			null,		// for skip index 0
+			Constelations,
+			StarryNight
+		];
+		
+		function main(){
+			initializeCanvas();
+
+			for(let i=1; i<projects.length; i++){
+				new projects[i](document.getElementById("canvas_"+ i));
+			}
+		}
+		
+		function initializeCanvas(){
+			for(let i=1; i<projects.length; i++){
+				const canvas = document.createElement("canvas");
+				canvas.id = "canvas_" + i;
+				canvas.width = CANVAS_SIZE;
+				canvas.height = CANVAS_SIZE;
+				document.body.appendChild(canvas);
+			}
+		}
+	</script>
+</head>
+<body onload="main()"></body>
+</html>
